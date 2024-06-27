@@ -1,3 +1,44 @@
+## Tecnologias Utilizadas
+
+- .NET 8.0.302
+- PostgreSQL
+- Docker Compose
+
+## Chamadas dos Serviços
+
+### Faturamentos
+
+- **Get** `/api/v1/Billing`
+- **Get** `/api/v1/Billing/:id`
+- **DELETE** `/api/v1/Billing/:id`
+
+### Importação de Faturamento
+
+- **POST** `/api/v1/BillingImport`
+
+### Clientes
+
+- **GET** `/api/v1/Customer`
+- **GET** `/api/v1/Customer/:id`
+- **POST** `/api/v1/Customer`
+- **PUT** `/api/v1/Customer/:id`
+- **DELETE** `/api/v1/Customer/:id`
+
+### Produtos
+
+- **GET** `/api/v1/Product`
+- **GET** `/api/v1/Product/:id`
+- **POST** `/api/v1/Product`
+- **PUT** `/api/v1/Product/:id`
+- **DELETE** `/api/v1/Product/:id`
+
+## Configuração
+
+Para executar localmente é necessário:
+
+- Instalar o Docker Desktop
+- Executar o projeto docker-compose
+
 **Teste para vaga de Desenvolvimento Back-end .NET**
 ---------------------
 Criar uma API REST para gerenciar faturamento de clientes.

@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  api:
+    image: ${DOCKER_REGISTRY-}api
+    container_name: billing.api
+    build:
+      context: .
+      dockerfile: Api/Dockerfile
+
+  billing.database:
+    image: postgres:latest
+    container_name: billing.database
+    environment:
+     - POSTGRES_DB=Billing
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=12345678
+    volumes:
+     - ./.containers/db:/var/lib/postgresql/data
+    ports:
+     - 8432:5432
