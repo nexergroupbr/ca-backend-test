@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CaBackendTest/.vs/CaBackendTest
+/.vs
+/CaBackendTest/CaBackendTest/bin/Debug/net7.0
+/CaBackendTest/CaBackendTest/obj
+/CaBackendTest/CaBackendTest/appsettings.Development.json
