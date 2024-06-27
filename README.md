@@ -4,13 +4,15 @@ Criar uma API REST para gerenciar faturamento de clientes.
 ---------------------
 **Funcionalidades 🛠️**
 
-* Customer: CRUD; Criar um cadastro do cliente com os seguintes campos:
+* Customer: CRUD;
+Criar um cadastro do cliente com os seguintes campos:
     * Id;
     * Name;
     * Email;
     * Address;
     * **Todos os campos são de preenchimento obrigatório.**
-* Produtos: CRUD; Criar um cadastro de produtos com os seguintes campos:
+* Produtos: CRUD;
+Criar um cadastro de produtos com os seguintes campos:
     * Id;
     * Nome do produto;
     * **Todos os campos são de preenchimento obrigatório.**

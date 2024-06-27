@@ -1,0 +1,6 @@
+@FaturamentoApi_HostAddress = http://localhost:5294
+
+GET {{FaturamentoApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
