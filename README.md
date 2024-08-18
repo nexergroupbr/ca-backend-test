@@ -1,56 +1,120 @@
-**Teste para vaga de Desenvolvimento Back-end .NET**
----------------------
-Criar uma API REST para gerenciar faturamento de clientes.
----------------------
-**Funcionalidades 🛠️**
+# API para Gerenciamento de Faturamento de Clientes
 
-* Customer: CRUD; Criar um cadastro do cliente com os seguintes campos:
-    * Id;
-    * Name;
-    * Email;
-    * Address;
-    * **Todos os campos são de preenchimento obrigatório.**
-* Produtos: CRUD; Criar um cadastro de produtos com os seguintes campos:
-    * Id;
-    * Nome do produto;
-    * **Todos os campos são de preenchimento obrigatório.**
-* Controle de conferência e importação de billing.
-    * Utilizar postman para consulta dos dados da API’s para criação das tabelas de billing e billingLines.
-	  * Após consulta, e criação do passo anterior, inserir no banco de dados o primeiro registro do retorno da API de billing para criação de cliente e produto através do swagger ou dataseed.
+##### Por Kayque Almeida Piton
 
-    * Utilizar as API’s para consumo dos dados a partir da aplicação que está criada e fazer as seguintes verificações:
-      * Se o cliente e o produto existirem, inserir o registro do billing e billingLines no DB local.
-      * Caso se o cliente existir ou só o produto existir, deve retornar um erro na aplicação informando sobre a criação do registro faltante.
-      * Criar exceptions tratando mal funcionamento ou interrupção de serviço quando API estiver fora.
-* Lista de API’s :
-	* Get https://65c3b12439055e7482c16bca.mockapi.io/api/v1/billing
-	* Get https://65c3b12439055e7482c16bca.mockapi.io/api/v1/billing/:id
-	* Post https://65c3b12439055e7482c16bca.mockapi.io/api/v1/billing
-	* Delete https://65c3b12439055e7482c16bca.mockapi.io/api/v1/billing/:id
-	* PUT https://65c3b12439055e7482c16bca.mockapi.io/api/v1/billing/:id
----------------------
-**Requisitos 💻**
+Este projeto é uma API REST desenvolvida em .NET 8.0 para gerenciar o faturamento de clientes. Inclui operações CRUD para clientes e produtos, bem como a importação e gerenciamento de faturas de uma API externa.
 
-* A aplicação deverá ser desenvolvida usando .NET a partir da versão 5+;
-* Modelagem de dados pode ser no banco de dados de sua preferência, podendo ser um banco relacional ou não relacional (mongodb, SQL Server, PostgreSQL, MySQL, etc);
-* Persistência de dados no banco deverá ser feita utilizando o Entity Framework Core;
-* O retorno da API deverá ser em formato JSON;
-* Utilizar as requisições GET, POST, PUT ou DELETE, conforme a melhor prática;
-* Criar o README do projeto descrevendo as tecnologias utilizadas, chamadas dos serviços e configurações necessário para executar a aplicação.
----------------------
-**Pontos Extras ⭐**
+## Funcionalidades
 
-* Desenvolvimento baseado em TDD;
-* Práticas de modelagem de projeto;
-* Criar e configurar o Swagger da API de acordo com as melhores práticas;
-* Criar uma API para extração dos dados de faturamento.
-* Sugestões serão bem vindas.
----------------------
-**Submissão do teste 📝**
+#### Customer: Operações **CRUD** completas para clientes.
+  * Id
+  * Name
+  * Email
+  * Address
+  * **Todos os campos são de preenchimento obrigatório.**
 
-Crie um fork do teste para acompanharmos o seu desenvolvimento através dos seus commits.
+#### Product: Operações **CRUD** completas para produtos.
+  * Id
+  * Description
+  * **Todos os campos são de preenchimento obrigatório.**
 
----------------------
-Obrigado!
+#### Billing
+   * Importação de dados de faturamento de uma API externa.
+   * Verificação e inserção de faturas no banco de dados local.
+   * Tratamento de exceções para mau funcionamento ou interrupção do serviço da API externa.
 
-Agradecemos sua participação no teste. Boa sorte! 😄
+## Tecnologias utilizadas
+
+#### Frameworks Principais
+   * .NET 8.0
+   * Entity Framework Core 8.0.7
+   * MySQL com Pomelo.EntityFrameworkCore.MySql 8.0.2
+   * Microsoft.EntityFrameworkCore.Design 8.0.7
+   * AutoMapper 13.0.1
+   * FluentValidation 11.9.2
+   * Refit 7.1.2
+   * Swagger com Swashbuckle.AspNetCore 6.6.2
+
+#### Bibliotecas de Apoio e Extensões
+   * Microsoft.AspNetCore.OpenApi 8.0.7
+   * Microsoft.Extensions.Http 8.0.0
+
+#### Ferramentas de Teste e Cobertura
+   * coverlet.collector 6.0.2
+   * coverlet.msbuild 6.0.2
+   * FluentAssertions 6.12.0
+   * Microsoft.NET.Test.Sdk 17.8.0
+   * Moq 4.20.70
+   * xunit 2.8.1
+   * xunit.runner.visualstudio 2.8.0
+
+## Configuração do Projeto 
+
+**1. Clone o repositório:**
+   ```sh
+   git clone https://github.com/kayquepiton/ca-backend-test.git
+   ```
+
+**2. Navegue para o direório do projeto:**
+   ```sh
+   cd ca-backend-test
+   ```
+
+**3. Configure a string de conexão do MySQL:** `appsettings.json`:**
+   ```json
+   {
+     "ConnectionStrings": {
+       "DefaultConnection": "Server=localhost;Port=yuorport;Database=yourdatabase;Uid=root;Pwd=yourpassword;"
+     }
+   }
+   ```
+
+**4. Restaure as dependências e inicialize o banco de dados:**
+   ```sh
+   dotnet restore
+   cd ca-backend-test.Infra.Data
+   dotnet-ef migrations add "InitialMigration" -s ../Ca.Backend.Test.Api/Ca.Backend.Test.Api.csproj 
+   dotnet-ef database update -s ../Ca.Backend.Test.Api/Ca.Backend.Test.Api.csproj 
+   ```
+
+**5. Execute o projeto:**
+   ```sh
+   dotnet run --project Ca.Backend.Test.API
+   ```
+
+**6. Acesse Swagger para testar endpoints:**
+   - Abra seu navegador da web e digite o endereço local onde a aplicação está sendo executada
+   s, por exemplo: `https://localhost:{port}/index.html`.
+
+## Endpoints da API
+
+#### Customers
+   * **GET** /api/customers
+   * **GET** /api/customers/{id}
+   * **POST** /api/customers
+   * **PUT** /api/customers/{id}
+   * **DELETE** /api/customers/{id}
+
+#### Products
+   * **GET** /api/products
+   * **GET** /api/products/{id}
+   * **POST** /api/products
+   * **PUT** /api/products/{id}
+   * **DELETE** /api/products/{id}
+
+#### Billing
+   * **GET** /api/billing
+   * **GET** /api/billing/{id}
+   * **POST** /api/billing
+   * **PUT** /api/billing/{id}
+   * **DELETE** /api/billing/{id}
+   * **POST** /api/billing/importFromExternalApi (Importação dos dados do faturamento (billing) para uma API externa)
+
+### Futuras implementações
+   * Aperfeiçoamento das práticas de modelagem do projeto.
+   * Melhorar cobertura de teste.
+
+## Contato
+   * Kayque Almeida Piton
+   * Email: [kayquepiton@gmail.com](mailto:kayquepiton@gmail.com)  
+   * LinkedIn: [Kayque Almeida Piton](https://www.linkedin.com/in/kayquepiton/)
