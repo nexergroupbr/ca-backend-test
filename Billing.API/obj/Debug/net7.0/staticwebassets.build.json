@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "RPp6GlGss/EQv+emorLB17lrrMjEoZySHC0JTzW2w2s=",
+  "Source": "Billing.API",
+  "BasePath": "_content/Billing.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
