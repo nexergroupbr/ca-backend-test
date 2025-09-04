@@ -1,0 +1,5 @@
+C:\Users\isado\OneDrive\Documentos\BackendNexer\BillingAPI\Domain1\obj\Debug\net8.0\Domain1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\isado\OneDrive\Documentos\BackendNexer\BillingAPI\Domain1\obj\Debug\net8.0\Domain1.AssemblyInfoInputs.cache
+C:\Users\isado\OneDrive\Documentos\BackendNexer\BillingAPI\Domain1\obj\Debug\net8.0\Domain1.AssemblyInfo.cs
+C:\Users\isado\OneDrive\Documentos\BackendNexer\BillingAPI\Domain1\obj\Debug\net8.0\Domain1.csproj.CoreCompileInputs.cache
+C:\Users\isado\OneDrive\Documentos\BackendNexer\BillingAPI\Domain1\obj\Debug\net8.0\Domain1.sourcelink.json
